@@ -34,8 +34,19 @@ function onSetTxt(txt){
     setText(txt)
 }
 
-function onAddTxt(){
+function onAddTxtLine(){
     const elTxtLine = document.querySelector('.txt-box input')
     elTxtLine.value = 'Write your new line here...'
-    addTxt()
+    addTxtLine()
+}
+
+function onChangeTxtLine(){
+    // const elTxtLine = document.querySelector('.txt-box input')
+    // elTxtLine.value = 'Write your new line here...'
+
+    changeTxtLine()
+}
+
+function onRemoveTxtLine(){
+    removeTxtLine()
 }

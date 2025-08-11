@@ -79,10 +79,27 @@ function setText(txt) {
     renderMeme()
 }
 
-function addTxt(){
+function addTxtLine(){
     gMeme.selectedLineIdx++
     console.log(gMeme.selectedLineIdx)
-    
+
     setText('Write your new line here...')
+}
+
+function changeTxtLine(){
+    console.log('selectedLineIdx',gMeme.selectedLineIdx)
+    console.log('lines length',gMeme.lines.length -1)
+
+    if (gMeme.selectedLineIdx === gMeme.lines.length - 1) {
+        gMeme.selectedLineIdx = 0
+    } else {
+        gMeme.selectedLineIdx++
+    }
+    console.log(gMeme.selectedLineIdx)
+}
+
+function removeTxtLine(){
+    gMeme.lines.splice(gMeme.selectedLineIdx,1)
+    renderMeme()
 }
 
