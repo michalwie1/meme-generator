@@ -56,11 +56,11 @@
             <!-- txt editor: font size, center... -->
             <div class="txt-editor">
                 <button onclick="onSetTxtSize(this)" data-value="increase" title="Increase text size">
-                    + 
+                    A+ 
                 </button>
 
                 <button onclick="onSetTxtSize(this)" title="Decrease text size">
-                    - 
+                    A- 
                 </button>
 
                  <button onclick="onSetTxtAlign(this)" title="Align left">
@@ -88,9 +88,9 @@
 
             <div class="emoji">
                 <ul>
-                    <li class="bw-img" onclick="onSetEmoji(this)">&#128512;</li>
-                    <li class="bw-img" onclick="onSetEmoji(this)">&#128540;</li>
-                    <li class="bw-img" onclick="onSetEmoji(this)">&#128526;</li>
+                    <li onclick="onSetEmoji(this)">&#128512;</li>
+                    <li onclick="onSetEmoji(this)">&#128540;</li>
+                    <li onclick="onSetEmoji(this)">&#128526;</li>
                 </ul>
             </div>
 
@@ -104,16 +104,16 @@
                     <input name="img" id="imgData" type="hidden"/>
                     <button class="btn-upload" type="submit" title="Upload image">
                         <i class="fa-solid fa-share-nodes"></i>
-                        Share
+                        
                     </button>
                 </form>
+                
+                
+                <!-- DOWNLOAD -->
+                <a href="#" onclick="onDownloadImg(this)" download="my-img.jpeg">
+                    <i class="fa-solid fa-download" title="download image"></i>
+                </a>
             </div>
-
-
-            <!-- DOWNLOAD -->
-            <a href="#" onclick="onDownloadImg(this)" download="my-img.jpeg">
-                <i class="fa-solid fa-download" title="download image"></i>
-            </a>
 
 
             <!-- SAVE -->

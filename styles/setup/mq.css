@@ -1,0 +1,32 @@
+/* MOBILE */
+@media (max-width: 640px){   
+}
+
+
+/* MEDIUM */
+@media (min-width: 640px){
+    .editor{
+        border-radius: 30px;
+    }
+}
+
+/* MOBILE & TABLET */
+@media (max-width: 930px){
+    main{
+        display: block;
+        margin: 1em 0;
+    }
+
+    .editor{
+        width: 50vw;
+        margin-top: 1em;
+        justify-self: center;
+        border-radius: 30px;
+    }
+}
+
+
+/* LARGE */
+@media (min-width: 930px){
+  
+}

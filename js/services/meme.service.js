@@ -95,6 +95,7 @@ function changeTxtLine(){
     } else {
         gMeme.selectedLineIdx++
     }
+    renderMeme()
     console.log(gMeme.selectedLineIdx)
 }
 
@@ -103,3 +104,4 @@ function removeTxtLine(){
     renderMeme()
 }
 
+// TEXT - SHOULD ADD - DON'T OVERRIDE LINES !!!!

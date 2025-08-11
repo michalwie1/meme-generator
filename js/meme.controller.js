@@ -16,6 +16,9 @@ function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-board')
     gElCanvas.width = elContainer.clientWidth
 
+    // const elEditor = document.querySelector('.editor')
+    // elEditor.style.width = elContainer.clientWidth
+
     if (gMeme.selectedImgId) {
     setImg(gMeme.selectedImgId)
     }

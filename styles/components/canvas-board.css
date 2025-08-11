@@ -1,9 +1,8 @@
 .canvas-board{
+    grid-column: 1;
     display: flex;
     justify-self: center;
-
     width: 50vw;
-    margin-top: 3em;
     background-color: transparent;
     border: 2px solid var(--clr3);
     border-radius: 10%;
