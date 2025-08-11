@@ -8,17 +8,19 @@ nav ul{
     display: flex;
     font-weight: 700;
     letter-spacing: 1px;
-    /* margin-right: 10px; */
     font-size: 1rem;
     list-style-type: none;
     justify-content: center;
-    /* gap: 20px; */
+    padding: 0;
     
 }
 
-/* nav .logo{
-    margin-left: 0.625rem; 
-    } */
+nav ul li{
+    display: flex;
+
+    justify-content: center;
+    
+}
     
 nav a{
     color: var(--clr2);
@@ -27,21 +29,9 @@ nav a{
         
     border-bottom: 1px solid var(--clr2);
 
-    /* position: relative; */
 }
 
 nav a:hover{
     color: var(--clr-green);
     text-decoration: none;
-}
-
-.menu-toggle{
-    /* background-color: white; */
-    color: white;
-    /* padding: 0 7px; */
-    background-color: transparent;
-    border: 0;
-    font-size: 1.8rem;
-
-    /* border-radius: ; */
 }
