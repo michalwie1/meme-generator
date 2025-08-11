@@ -1,0 +1,22 @@
+footer{
+    background-color: var(--clr1);
+    color: var(--clr2);
+    padding: 5px 10px; 
+    text-align: center; 
+}
+
+footer p{
+    font-size: .8em;
+}
+
+footer .social i{
+    background-color: var(--clr1);
+    /* size: 100px; */
+    color: var(--clr2);
+    padding: 10px;
+    margin: 0 10px;
+}
+
+footer .social i:hover{
+ background-color: var(--clr1);
+}
