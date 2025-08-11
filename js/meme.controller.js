@@ -7,17 +7,9 @@ function onInit(){
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    const imgId = loadFromStorage('selectedImgId') || gMeme.selectedImgId
     gImgs = loadFromStorage('gImgs')
-    setImg(imgId)
 
-
-    //     if (imgId) {
-    //     setImg(imgId)
-    // } else {
-    //     renderMeme()
-    // }
-    // renderMeme()
+    renderMeme()
 }
 
 function resizeCanvas() {
@@ -30,11 +22,14 @@ function resizeCanvas() {
 }
 
 function renderMeme(){
-    gCtx.fillStyle =  'var(--clr3)'
-    gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height)
+    const imgId = loadFromStorage('selectedImgId') || gMeme.selectedImgId //service??
+    setImg(imgId)
+
+    // drawText('Write your text',50,50)
 }
 
 
-function onSetTxt(elTxt){
-    setText()
+
+function onSetTxt(txt){
+    setText(txt)
 }

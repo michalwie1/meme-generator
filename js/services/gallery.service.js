@@ -3,23 +3,7 @@
 var gImgs = []
 
 
-function setImg(imgId) {
-    const imgIdx = getImgById(imgId)
-    if (imgIdx === -1) return
-    
-    const img = new Image()   
-    console.log(imgIdx)
-    img.src = gImgs[imgIdx].url
-    
-    img.onload = () => {
-        gElCanvas.width = img.width
-        gElCanvas.height = img.height
 
-        gCtx.fillStyle = 'white'
-        gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height)
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-    }
-}
 
 function getImgById(imgId){
     console.log(imgId)
