@@ -3,31 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+    <title>Editor</title>
     <script src="https://kit.fontawesome.com/605afe2af0.js" crossorigin="anonymous"></script>       
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body onload="onInitGallery()">
+<body onload="onInit()" onresize="resizeCanvas()">
     <header>
         <h1>Meme Generator</h1>
         <nav>
             <ul>
-                <li><a class="active" href="index.html">Gallery</a></li>
-                <li><a href="editor.html">Editor</a></li>
+                <li onclick="onOpenGallery()">Gallery</li>
+                <li>Editor</li>
             </ul>
         </nav>
     </header>
 
     <main>
 
-        <!-- IMAGES -->
-            
-        <section class="gallery">
-            <!-- <img src="img/1.jpg"> -->
+        <dialog class="gallery">
+             <!-- <img src="img/1.jpg">
+             <img src="img/2.jpg">
+             <img src="img/3.jpg">
+             <img src="img/4.jpg">
+             <img src="img/5.jpg">
+             <img src="img/6.jpg">
+             <img src="img/7.jpg">
+             <img src="img/8.jpg"> -->
+        </dialog>
+
+        <!-- CANVAS -->
+        <section class="canvas-board">
+            <canvas width="400" height="400"></canvas>
+            <!-- <canvas width="400" height="400" onclick="onDraw(event)"></canvas> 
+                    onmousedown="onDown(event)"
+                    ontouchstart="onDown(event)"
+                    onmouseup="onUp()"
+                    ontouchend="onUp()"
+                    onmousemove="onMove(event)"
+                    ontouchmove="onMove(event)" -->
+                    
+            </canvas>
+        </section>
+
+         <!-- EDITOR -->
+        <section class="editor">
+            <div class="txt-box">
+                <input type="text" value="Write your text here..." onchange="onSetTxt(this.value)">
+            </div>
+            <!-- btns: replace/add/remove -->
+            <div class="txt-btns">
+                <button onclick="onChangeTxtLine()" title="Change text line">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+                
+                <button onclick="onAddTxtLine()" title="Add text">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+
+                <button onclick="onRemoveTxtLine()" title="Remove text">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+            <!-- txt editor: font size, center... -->
+            <div class="txt-editor">
+                <button onclick="onSetTxtSize(this)" data-value="increase" title="Increase text size">
+                    A+ 
+                </button>
+
+                <button onclick="onSetTxtSize(this)" title="Decrease text size">
+                    A- 
+                </button>
+
+                 <button onclick="onSetTxtAlign(this)" title="Align left">
+                    <i class="fa-solid fa-align-left"></i>
+                </button>
+
+                 <button onclick="onSetTxtAlign(this)" title="Align center">
+                    <i class="fa-solid fa-align-center"></i> 
+                </button>
+
+                 <button onclick="onSetTxtAlign(this)" title="Align right">
+                    <i class="fa-solid fa-align-right"></i> 
+                </button>
+
+                <select class="font-family" name="fontFamily" onchange="onSetFont(this.value)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+
+                <input type="color" title="Text color" onchange="onSetTxtColor(this.value)">
+                <input type="color" title="Border color" onchange="onSetBorderColor(this.value)">
+
+            </div>
+
+            <div class="emoji">
+                <ul>
+                    <li onclick="onSetEmoji(this)">&#128512;</li>
+                    <li onclick="onSetEmoji(this)">&#128540;</li>
+                    <li onclick="onSetEmoji(this)">&#128526;</li>
+                </ul>
+            </div>
+
+            <div class="share">
+            <!-- UPLOAD -->
+            <form
+                    action=""
+                    method="POST"
+                    enctype="multipart/form-data"
+                    onsubmit="onUploadImg(event)">
+                    <input name="img" id="imgData" type="hidden"/>
+                    <button class="btn-upload" type="submit" title="Upload image">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        
+                    </button>
+                </form>
+                
+                
+                <!-- DOWNLOAD -->
+                <a href="#" onclick="onDownloadImg(this)" download="my-img.jpeg">
+                    <i class="fa-solid fa-download" title="download image"></i>
+                </a>
+            </div>
+
+
+            <!-- SAVE -->
+             
+                <!-- <form
+                    action=""
+                    method="POST"
+                    enctype="multipart/form-data"
+                    onsubmit="onSaveImg(event)">
+                    <input name="img" id="imgData" type="hidden"/>
+                    <button class="btn-save" type="submit" title="Save image">Save</button>
+                    </button>
+                </form> -->
+
         </section>
 
 
-        <div class="user-msg">user-msg</div>
+        <div class="user-msg"></div>
 
 
     </main>

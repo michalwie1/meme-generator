@@ -19,10 +19,11 @@ nav ul li{
     display: flex;
 
     justify-content: center;
+    color: var(--clr2);
     
 }
     
-nav a{
+nav ul li{
     color: var(--clr2);
     text-decoration: none;
     padding: 0 2em;
@@ -31,7 +32,7 @@ nav a{
 
 }
 
-nav a:hover{
-    color: var(--clr-green);
+nav li:hover{
+    color: var(--clr-4);
     text-decoration: none;
 }

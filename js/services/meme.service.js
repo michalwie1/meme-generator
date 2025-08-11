@@ -13,6 +13,7 @@ var gMeme = {
 }
 
 var gY = 50
+var gImgs = []
 
 var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
 
@@ -105,3 +106,29 @@ function removeTxtLine(){
 }
 
 // TEXT - SHOULD ADD - DON'T OVERRIDE LINES !!!!
+
+
+
+function getImgById(imgId){
+    console.log(imgId)
+    console.log(gImgs)
+    
+    return gImgs.findIndex(img => +img.id === +imgId)
+}
+
+function _createImgs(){
+    for (var i = 1; i < 18; i++) {
+        gImgs.push(_createImg(i,['cat','dog'])) //should change the array keywords
+    }
+
+    saveToStorage('gImgs',gImgs)
+    console.log(gImgs)
+}
+
+function _createImg(id,keywords){
+    return {
+        id,
+        url: `img/${id}.jpg`,
+        keywords: keywords
+    }
+}

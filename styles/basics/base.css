@@ -4,7 +4,7 @@
 
 html{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #e9e9ed;
+    background-color: var(--clr2);
 }
 
 body{

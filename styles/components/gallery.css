@@ -1,3 +1,9 @@
+.gallery{
+    transition: .5ms;  /* CHECK!!!! */
+    background-color: var(--clr2);
+    border: none;
+    text-align: center;
+}
 
 .gallery .img-wrapper {
     position: relative;
@@ -30,3 +36,5 @@
 .gallery .img-wrapper .btn-close:hover{
     opacity: .3;
 }
+
+
