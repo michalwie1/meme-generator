@@ -2,10 +2,17 @@
     display: flex;
     justify-self: center;
 
-    width: 40vw;
+    width: 50vw;
     margin-top: 3em;
-    background-color: rgb(243, 236, 236);  /* add to vars */
-   
+    background-color: transparent;
     border: 2px solid var(--clr3);
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+.canvas-board canvas {
+    width: 100%; 
+    height: auto; 
+    display: block;
     border-radius: 10%;
 }
