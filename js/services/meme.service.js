@@ -12,6 +12,8 @@ var gMeme = {
  ]
 }
 
+var gY = 50
+
 var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
 
 
@@ -35,7 +37,13 @@ function setImg(imgId) {
         gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height)
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-        drawText(gMeme.lines[gMeme.selectedLineIdx].txt, gElCanvas.width / 2, 50)
+        console.log(gMeme)
+
+        gMeme.lines.forEach(line => {
+            console.log('txt',line.txt)
+            console.log('size',line.size)
+            drawText(line.txt, gElCanvas.width / 2, (line.size) + gY)
+        })
     }
 }
 
@@ -53,23 +61,28 @@ function drawText(text, x, y) {
 }
 
 function setText(txt) {
-    if(gMeme.lines.length <2) {
-        gMeme.lines[0].txt = txt
+    if(gMeme.lines.length === gMeme.selectedLineIdx + 1){
+        gMeme.lines[gMeme.selectedLineIdx].txt = txt
     }
-    else {
+
+        else {
         gMeme.lines.push(
             {  
                 txt,
-                size: 20,
+                size: 40 * (gMeme.selectedLineIdx+1),
                 color: 'white'
             }
         )
+        console.log(gMeme)
     }
 
     renderMeme()
-    // drawText(txt,200,50)
-    // drawText(gMeme.lines[gMeme.selectedLineIdx].txt, gElCanvas.width / 2, 50)
-    console.log(gMeme)
 }
 
+function addTxt(){
+    gMeme.selectedLineIdx++
+    console.log(gMeme.selectedLineIdx)
+    
+    setText('Write your new line here...')
+}
 

@@ -33,3 +33,9 @@ function renderMeme(){
 function onSetTxt(txt){
     setText(txt)
 }
+
+function onAddTxt(){
+    const elTxtLine = document.querySelector('.txt-box input')
+    elTxtLine.value = 'Write your new line here...'
+    addTxt()
+}
