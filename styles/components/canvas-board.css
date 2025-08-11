@@ -2,11 +2,12 @@
     grid-column: 1;
     display: flex;
     justify-self: center;
-    width: 50vw;
+    /* width: 50vw; */
     background-color: transparent;
     border: 2px solid var(--clr3);
     border-radius: 10%;
     overflow: hidden;
+    width: 90vw;
 }
 
 .canvas-board canvas {

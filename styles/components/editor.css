@@ -5,11 +5,13 @@
     border-radius: 10%;
     padding: 2em;
     width: 100%;
+
+    margin-top: 1em;
+    justify-self: center;
+    border-radius: 30px;
+    width: 90vw;
 }
 
-/* .editor:nth-child(n+2){
-    margin:3em;
-} */
  .editor > * {
     width: 90%;
     justify-self: center;

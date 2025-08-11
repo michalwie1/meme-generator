@@ -7,9 +7,15 @@ html{
     background-color: #e9e9ed;
 }
 
+body{
+    margin: 0;
+}
+
 main{
-    display: grid;
+    display: block;
+    margin: 1em 0;
+    
     grid-template-columns: 1fr 1fr;
     column-gap: 1.3em;
-    margin: 5em 0;
+
 }
