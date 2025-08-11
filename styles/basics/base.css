@@ -15,7 +15,7 @@ main{
     display: block;
     margin: 1em 0;
     
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1.3em;
+    /* grid-template-columns: 1fr 1fr;
+    column-gap: 1.3em; */
 
 }

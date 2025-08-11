@@ -4,11 +4,73 @@
 
 
 /* MEDIUM */
-@media (min-width: 640px){
+@media (min-width: 580px){
+
+    main{
+        display: block;
+        margin: 1em 0;
+    }
+
     .editor{
+        /* margin-top: 1em; */
+        justify-self: center;
+        border-radius: 30px;
+        width: 60vw;
+        margin-top: 1em;
+    }  
+    
+    .canvas-board{
+        width: 60vw;
         border-radius: 30px;
     }
 }
+
+
+/* DESKTOP */
+@media (min-width: 930px){
+    main{
+        display: grid;
+        gap: 2em;
+        margin: 3em 1.5em; 
+
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.3em;
+
+}
+    
+
+    .editor{
+        width: 40vw;
+        margin-top: 0;
+    }  
+    
+    .canvas-board{
+        width: 50vw;
+        border-radius: 30px;
+    }
+}
+
+
+/* MOBILE */
+        /* main{
+        display: block;
+        margin: 1em 0;
+    }
+
+    .editor{
+        margin-top: 1em;
+        justify-self: center;
+        border-radius: 30px;
+        width: 90vw;
+    }  
+    
+    .canvas-board{
+        width: 90vw;
+    } */
+
+
+
+
 
 /* MOBILE & TABLET */
 @media (max-width: 930px){
