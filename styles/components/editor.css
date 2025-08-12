@@ -12,7 +12,7 @@
 }
 
  .editor > * {
-    width: 90%;
+    width: 100%;
     justify-self: center;
     background-color: var(--clr4);
     padding: 1em;
@@ -25,6 +25,7 @@
     margin: 0 1em;
     border-radius: 10px;
     padding: 2%;
+    cursor: pointer;
  }
 
 .editor .txt-box input{
@@ -58,10 +59,12 @@
     border: none;
     margin: 0 1em;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .editor .emoji{
     display: flex;
+    cursor: pointer;
 }
 
 .editor .emoji ul{
@@ -86,7 +89,7 @@
 
 .editor .share button {
     background-color: transparent;
-    font-size: 1.35m;
+    font-size: 1em;
 }
 
 

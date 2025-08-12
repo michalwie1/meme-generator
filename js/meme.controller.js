@@ -101,5 +101,33 @@ function onRemoveTxtLine(){
     removeTxtLine()
 }
 
+function onDownloadImg(elLink){ 
+    const imgContent = gElCanvas.toDataURL('image/jpeg')
+    elLink.href = imgContent
+}
+
+function onSetTxtSize(size){
+    setTxtSize(size)
+}
+
+function onSetTxtAlign(alignment){
+    setTxtAlign(alignment)
+}
+
+function onSetFont(font){
+    setFont(font)
+}
+
+function onSetTxtColor(color){
+    setTxtColor(color)
+}
+
+function onSetBorderColor(color){
+    setBorderColor(color)
+}
+
+
+
+
 
 

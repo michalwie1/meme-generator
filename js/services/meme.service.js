@@ -6,8 +6,11 @@ var gMeme = {
  lines: [
  {
  txt: 'Write you text here...',
- size: 20,
- color: 'white'
+ size: 40,
+ align: 'center',
+ fontColor: 'white',
+ borderColor: 'black',
+ font: 'Arial'
  }
  ]
 }
@@ -43,20 +46,22 @@ function setImg(imgId) {
         gMeme.lines.forEach(line => {
             console.log('txt',line.txt)
             console.log('size',line.size)
-            drawText(line.txt, gElCanvas.width / 2, (line.size) + gY)
+            drawText(line.txt, gElCanvas.width / 2, (line.size) + gY) //dont rely on size !!! 
         })
     }
 }
 
 function drawText(text, x, y) {
     console.log('Drawing text:', text, x, y)
+    const lineIdx = gMeme.selectedLineIdx
+
     gCtx.lineWidth = 2
-    gCtx.font = 'bold 40px Arial'
-    gCtx.textAlign = 'center'
+    gCtx.font = `bold ${gMeme.lines[lineIdx].size}px ${gMeme.lines[lineIdx].font}`
+    gCtx.textAlign = gMeme.lines[lineIdx].align
     gCtx.textBaseline = 'middle'
     gCtx.tex
-    gCtx.fillStyle = 'white'
-    gCtx.strokeStyle = 'black'  
+    gCtx.fillStyle = gMeme.lines[lineIdx].fontColor
+    gCtx.strokeStyle = gMeme.lines[lineIdx].borderColor 
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 }
@@ -131,4 +136,47 @@ function _createImg(id,keywords){
         url: `img/${id}.jpg`,
         keywords: keywords
     }
+}
+
+function setTxtSize(size){
+    const lineIdx = gMeme.selectedLineIdx
+
+    if (size ==='increase' && gMeme.lines[lineIdx].size < 60){
+        gMeme.lines[lineIdx].size += 2
+    }
+    else if (size ==='decrease' && gMeme.lines[lineIdx].size > 3) {
+        gMeme.lines[lineIdx].size -= 2
+    }
+    else return
+    console.log(gMeme.lines[lineIdx].size)
+
+    renderMeme()
+}
+
+function setTxtAlign(alignment){ //MAKE SURE THIS STAYS IN THE CANVAS
+    const lineIdx = gMeme.selectedLineIdx
+
+    gMeme.lines[lineIdx].align = alignment
+    renderMeme()
+}
+
+function setFont(font){
+    const lineIdx = gMeme.selectedLineIdx
+
+    gMeme.lines[lineIdx].font = font
+    renderMeme()
+}
+
+function setTxtColor(color){
+    const lineIdx = gMeme.selectedLineIdx
+
+    gMeme.lines[lineIdx].fontColor = color
+    renderMeme()
+}
+
+function setBorderColor(color){
+    const lineIdx = gMeme.selectedLineIdx
+
+    gMeme.lines[lineIdx].borderColor = color
+    renderMeme()
 }

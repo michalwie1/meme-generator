@@ -66,23 +66,23 @@
             </div>
             <!-- txt editor: font size, center... -->
             <div class="txt-editor">
-                <button onclick="onSetTxtSize(this)" data-value="increase" title="Increase text size">
+                <button onclick="onSetTxtSize('increase')" title="Increase text size">
                     A+ 
                 </button>
 
-                <button onclick="onSetTxtSize(this)" title="Decrease text size">
+                <button onclick="onSetTxtSize('decrease')" title="Decrease text size">
                     A- 
                 </button>
 
-                 <button onclick="onSetTxtAlign(this)" title="Align left">
+                 <button onclick="onSetTxtAlign('left')" title="Align left">
                     <i class="fa-solid fa-align-left"></i>
                 </button>
 
-                 <button onclick="onSetTxtAlign(this)" title="Align center">
+                 <button onclick="onSetTxtAlign('center')" title="Align center">
                     <i class="fa-solid fa-align-center"></i> 
                 </button>
 
-                 <button onclick="onSetTxtAlign(this)" title="Align right">
+                 <button onclick="onSetTxtAlign('right')" title="Align right">
                     <i class="fa-solid fa-align-right"></i> 
                 </button>
 
@@ -121,7 +121,7 @@
                 
                 
                 <!-- DOWNLOAD -->
-                <a href="#" onclick="onDownloadImg(this)" download="my-img.jpeg">
+                <a href="#" onclick="onDownloadImg(this)" download="my-meme.jpeg">
                     <i class="fa-solid fa-download" title="download image"></i>
                 </a>
             </div>
