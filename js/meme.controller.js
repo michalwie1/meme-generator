@@ -10,8 +10,6 @@ function onInit(){
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    // gImgs = loadFromStorage('gImgs')
-
     renderMeme()
 }
 
@@ -31,8 +29,6 @@ function renderMeme(){
     console.log(gMeme.selectedImgId)
     const imgId =  gMeme.selectedImgId //check!!!!!!!??
     setImg(imgId)
-
-    // drawText('Write your text',50,50)
 }
 
 function onOpenGallery(){
@@ -75,8 +71,6 @@ function onSelectImg(elImg) {
 
     const elGallery = document.querySelector('.gallery')
     elGallery.close()
-    
-    // window.location.href = 'editor.html'
 }
 
 
@@ -90,11 +84,11 @@ function onAddTxtLine(){
     addTxtLine()
 }
 
-function onChangeTxtLine(){
+function onSwitchTxtLine(){
     // const elTxtLine = document.querySelector('.txt-box input')
     // elTxtLine.value = 'Write your new line here...'
 
-    changeTxtLine()
+    switchTxtLine()
 }
 
 function onRemoveTxtLine(){
@@ -115,6 +109,7 @@ function onSetTxtAlign(alignment){
 }
 
 function onSetFont(font){
+    console.log(font)
     setFont(font)
 }
 

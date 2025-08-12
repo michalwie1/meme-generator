@@ -21,14 +21,6 @@
     <main>
 
         <dialog class="gallery">
-             <!-- <img src="img/1.jpg">
-             <img src="img/2.jpg">
-             <img src="img/3.jpg">
-             <img src="img/4.jpg">
-             <img src="img/5.jpg">
-             <img src="img/6.jpg">
-             <img src="img/7.jpg">
-             <img src="img/8.jpg"> -->
         </dialog>
 
         <!-- CANVAS -->
@@ -52,14 +44,14 @@
             </div>
             <!-- btns: replace/add/remove -->
             <div class="txt-btns">
-                <button onclick="onChangeTxtLine()" title="Change text line">
-                    <i class="fa-solid fa-right-left"></i>
-                </button>
-                
-                <button onclick="onAddTxtLine()" title="Add text">
+                 <button onclick="onAddTxtLine()" title="Add text">
                     <i class="fa-solid fa-plus"></i>
                 </button>
 
+                <button onclick="onSwitchTxtLine()" title="Change text line">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+                
                 <button onclick="onRemoveTxtLine()" title="Remove text">
                     <i class="fa-solid fa-trash"></i>
                 </button>
@@ -86,12 +78,13 @@
                     <i class="fa-solid fa-align-right"></i> 
                 </button>
 
-                <select class="font-family" name="fontFamily" onchange="onSetFont(this.value)">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                <!-- ADD FONT FAMILY OPTIONS -->
+                <select class="font-family" onchange="onSetFont(this.value)"> 
+                    <option value="Arial">Arial</option>
+                    <option value="Monospace">Monospace</option>
+                    <option value="Times New Roman">Times New Roman</option>
                 </select>
-
+ 
                 <input type="color" title="Text color" onchange="onSetTxtColor(this.value)">
                 <input type="color" title="Border color" onchange="onSetBorderColor(this.value)">
 
