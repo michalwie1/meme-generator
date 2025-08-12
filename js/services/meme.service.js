@@ -6,11 +6,11 @@ var gMeme = {
  lines: [
  {
  txt: 'Write you text here...',
- size: 40,
+ size: 30,
  align: 'center',
  fontColor: 'white',
  borderColor: 'black',
- font: 'Arial',
+ font: 'monospace',
  y: 50
  }
  ]
@@ -179,11 +179,11 @@ function _createImg(id,keywords){
 function _createLine(){
     return {
         txt: 'Write you new line here...',
-        size: 40,
+        size: 30,
         align: 'center',
         fontColor: 'white',
         borderColor: 'black',
-        font: 'Arial',
+        font: 'monospace',
         y: gMeme.lines.length ? gMeme.lines[gMeme.lines.length - 1].y + 50 : 50
     }
 }
