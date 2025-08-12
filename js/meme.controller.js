@@ -5,10 +5,12 @@ var gCtx
 var gImg
 
 function onInit(){
+    _createImgs()
+    renderGallery()
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    gImgs = loadFromStorage('gImgs')
+    // gImgs = loadFromStorage('gImgs')
 
     renderMeme()
 }
@@ -26,22 +28,27 @@ function resizeCanvas() {
 }
 
 function renderMeme(){
-    const imgId = loadFromStorage('selectedImgId') || gMeme.selectedImgId //service??
+    console.log(gMeme.selectedImgId)
+    const imgId =  gMeme.selectedImgId //check!!!!!!!??
     setImg(imgId)
 
     // drawText('Write your text',50,50)
 }
 
 function onOpenGallery(){
-    _createImgs()
-    renderGallery()
+    
 
 
     const elGallery = document.querySelector('.gallery')
-    // elGallery.style.display = 'block'
     elGallery.show()
 
 }
+
+ // WHEN CLICKING ON BACKGROUND GO TO EDITOR??? *****
+// function onCloseGallery(){
+//     const elGallery = document.querySelector('.gallery')
+//     elGallery.close()
+// }
 
 function renderGallery(){
     let strHtml = ''
@@ -65,8 +72,11 @@ function onSelectImg(elImg) {
     saveToStorage('selectedImgId', +elImg.id)
 
     setImg(elImg.id)
+
+    const elGallery = document.querySelector('.gallery')
+    elGallery.close()
     
-    window.location.href = 'editor.html'
+    // window.location.href = 'editor.html'
 }
 
 

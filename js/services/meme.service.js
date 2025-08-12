@@ -121,7 +121,7 @@ function _createImgs(){
         gImgs.push(_createImg(i,['cat','dog'])) //should change the array keywords
     }
 
-    saveToStorage('gImgs',gImgs)
+    // saveToStorage('gImgs',gImgs)
     console.log(gImgs)
 }
 

@@ -2,13 +2,12 @@
     display: block;
     text-align: center;
     border: 2px solid var(--clr3);
-    border-radius: 10%;
+    border-radius: 30px;
     padding: 2em;
     /* width: 100%; */
 
     margin-top: 1em;
     justify-self: center;
-    border-radius: 10%;
     width: 90vw;
 }
 

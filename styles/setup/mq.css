@@ -73,7 +73,7 @@
 
 
 /* MOBILE & TABLET */
-@media (max-width: 930px){
+/* @media (max-width: 930px){
     main{
         display: block;
         margin: 1em 0;
@@ -85,7 +85,7 @@
         justify-self: center;
         border-radius: 30px;
     }
-}
+} */
 
 
 /* LARGE */
