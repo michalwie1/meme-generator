@@ -25,22 +25,20 @@
 
         <!-- CANVAS -->
         <section class="canvas-board">
-            <canvas width="400" height="400"></canvas>
-            <!-- <canvas width="400" height="400" onclick="onDraw(event)"></canvas> 
+            <canvas width="400" height="400"
                     onmousedown="onDown(event)"
                     ontouchstart="onDown(event)"
                     onmouseup="onUp()"
                     ontouchend="onUp()"
                     onmousemove="onMove(event)"
-                    ontouchmove="onMove(event)" -->
-                    
+                    ontouchmove="onMove(event)"> 
             </canvas>
         </section>
 
          <!-- EDITOR -->
         <section class="editor">
             <div class="txt-box">
-                <input type="text" value="Write your text here..." onchange="onSetTxt(this.value)">
+                <input type="text" value="Write your text here..." oninput="onSetTxt(this.value)">
             </div>
             <!-- btns: replace/add/remove -->
             <div class="txt-btns">

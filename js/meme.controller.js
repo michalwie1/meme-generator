@@ -3,6 +3,7 @@
 var gElCanvas
 var gCtx
 var gImg
+var gLastPos
 
 function onInit(){
     _createImgs()
@@ -25,16 +26,9 @@ function resizeCanvas() {
     }
 }
 
-function renderMeme(){
-    console.log(gMeme.selectedImgId)
-    const imgId =  gMeme.selectedImgId //check!!!!!!!??
-    setImg(imgId)
-}
+
 
 function onOpenGallery(){
-    
-
-
     const elGallery = document.querySelector('.gallery')
     elGallery.show()
 
@@ -120,6 +114,48 @@ function onSetTxtColor(color){
 function onSetBorderColor(color){
     setBorderColor(color)
 }
+
+// DRAG & DROP :
+
+function onDown(ev) {
+    ev.preventDefault()
+    const pos = getEvPos(ev)
+
+    if (!isLineClicked(pos)) return
+
+    setLineDrag(true)
+    gLastPos = pos
+}
+
+
+function onMove(ev) { //not moving on x axis, only y ???
+    ev.preventDefault()
+    const pos = getEvPos(ev)
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+
+    if (isLineClicked(pos)) {
+        document.body.style.cursor = 'all-scroll'
+    } else {
+        document.body.style.cursor = 'default'
+    }
+
+    if (!line.isDrag) return
+
+    const dx = pos.x - gLastPos.x
+    const dy = pos.y - gLastPos.y
+
+    line.x += dx
+    line.y += dy
+
+    gLastPos = pos
+    renderMeme()
+}
+
+
+function onUp() {
+    setLineDrag(false)
+}
+
 
 
 
