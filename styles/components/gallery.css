@@ -8,12 +8,11 @@
 .gallery .img-wrapper {
     position: relative;
     display: inline-block;
-    margin: 2em;
-
+    margin: .5em;
 }
 
 .gallery .img-wrapper img {
-    max-width: 20vw;
+    max-width: 35vw;
     border: 1px solid black;
     display: block;
     cursor: pointer;
@@ -28,6 +27,7 @@
     position: absolute;
     top: 5%;
     right: 5%;
+    border-radius: 20%;
     background: white;
     border: 1px solid black;
     cursor: pointer;

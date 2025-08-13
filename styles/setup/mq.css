@@ -23,6 +23,10 @@
         width: 60vw;
         border-radius: 30px;
     }
+
+    .gallery .img-wrapper img {
+    max-width: 20vw;
+    }
 }
 
 
@@ -33,12 +37,10 @@
         gap: 2em;
         margin: 3em 1.5em; 
 
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1.3em;
-
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.3em;
 }
     
-
     .editor{
         width: 40vw;
         margin-top: 0;
