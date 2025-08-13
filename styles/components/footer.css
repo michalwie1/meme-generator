@@ -11,12 +11,13 @@ footer p{
 
 footer .social i{
     background-color: var(--clr1);
-    /* size: 100px; */
     color: var(--clr2);
-    padding: 10px;
-    margin: 0 10px;
+    padding: .5em .3em;
+    margin: 0 .4em;
+    transition: color 0.5s, border-bottom-color 0.5s;
 }
 
 footer .social i:hover{
- background-color: var(--clr1);
+    opacity: .5;
+    color: var(--clr3);
 }
