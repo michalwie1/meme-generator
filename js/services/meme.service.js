@@ -169,6 +169,21 @@ function setBorderColor(color){
     renderMeme()
 }
 
+function setEmoji(elEmoji){ // should check, override lines?
+    const emojiSelected = elEmoji.innerText
+    drawEmoji(emojiSelected, gMeme.lines[gMeme.selectedLineIdx].x, gMeme.lines[gMeme.selectedLineIdx].y)
+}
+
+function drawEmoji(emoji, x, y) {
+    gCtx.lineWidth = 2
+    gCtx.strokeStyle = 'brown'
+    gCtx.font = '40px Arial'
+    gCtx.textAlign = 'center'
+    gCtx.textBaseline = 'middle'
+    gCtx.fillText(emoji, x, y)
+    gCtx.strokeText(emoji, x, y)
+}
+
 function isLineClicked(clickedPos) { //update
     const space = 10
     const line = gMeme.lines[gMeme.selectedLineIdx]
@@ -220,6 +235,8 @@ function getEvPos(ev) {
 function setLineDrag(isDrag) {
     gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
 }
+
+
 
 function _createImgs(){
     for (var i = 1; i < 18; i++) {

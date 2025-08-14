@@ -20,7 +20,7 @@
     border-radius: 10px;
  }
 
- .editor button{
+ .editor button:not(btn-share){
     border: none;
     margin: 0 1em;
     border-radius: 10px;
@@ -46,8 +46,6 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    /* margin-top: 1.5em; */
-    /* margin-inline: 2em; */
 }
 
 .editor .txt-editor > button {
@@ -70,6 +68,7 @@
 .editor .emoji{
     display: flex;
     cursor: pointer;
+    justify-content: center;
 }
 
 .editor .emoji ul{
@@ -80,6 +79,9 @@
     justify-content: end;
 }
 
+.editor .emoji ul li:hover{
+    opacity: .3;
+}
 
 .editor .share{
     display: flex;
@@ -87,15 +89,17 @@
 }
 
 .editor .share i {
-    padding: 0 1em;
-    font-size: 1.3em;
+    padding: 1em 1em;
+    font-size: .9em;
     color: black;
 }
 
-.editor .share button {
+.editor .btn-share {
     background-color: transparent;
-    font-size: 1em;
+    font-size: .9em;
+    margin: 0;
 }
+
 
 
 

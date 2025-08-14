@@ -115,6 +115,22 @@ function onSetBorderColor(color){
     setBorderColor(color)
 }
 
+function onSetEmoji(elEmoji){
+    setEmoji(elEmoji)
+    // const elSelectImg = document.querySelectorAll('.select-img ul li')
+    
+    // // elSelectImg.forEach(img => {    
+    // //     if (img !== elImg) {
+    // //     img.classList.add('bw-img') 
+    // // }})
+
+    // // elImg.classList.toggle('bw-img')
+    // gEmojiSelected = elEmoji.innerText
+    
+    // onSetShape('emoji')
+    // drawEmoji(gEmojiSelected, gCanvasProp.pos.x, gCanvasProp.pos.y)
+}
+
 // DRAG & DROP :
 
 function onDown(ev) {
