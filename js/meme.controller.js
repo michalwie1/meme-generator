@@ -61,8 +61,8 @@ function onRemoveTxtLine(){
     removeTxtLine()
 }
 
-function onDownloadImg(elLink){ 
-    renderMeme(true)
+function onDownloadMeme(elLink){ 
+    // renderMeme(true)
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
 }
@@ -117,8 +117,6 @@ function onSaveMeme(ev){
     ev.preventDefault()
     saveMeme()
 
-    // const ElSavedMemes = document.querySelector('.saved-memes')
-    // ElSavedMemes.show()
     // renderSavedMemes() 
 }
 
@@ -154,7 +152,6 @@ function onMove(ev) { //not moving on x axis, only y ???
     line.y += dy
 
     gLastPos = pos 
-    console.log('gLastPos',gLastPos)
     renderMeme()
 }
 

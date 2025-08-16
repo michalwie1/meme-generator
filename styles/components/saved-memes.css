@@ -4,7 +4,8 @@
     border: none;
     text-align: center;
     width: 100vw;
-    height: max-content;
+    height: 100vh;
+    /* height: max-content; */
 }
 
 .saved-memes .img-wrapper .btn-close {

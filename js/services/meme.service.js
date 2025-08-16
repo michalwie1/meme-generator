@@ -48,21 +48,36 @@ function renderSavedMemes(){
     ElSavedMemes.innerHTML = strHtml
 }
 
-
 function saveMeme() {
-    renderMeme(true)
-    
-    const canvasData = gElCanvas.toDataURL('image/jpeg')
-    console.log('canvasData',canvasData)
     const imgId = loadFromStorage(STORAGE_CURR_MEME).selectedImgId
     const memeId = generateId()
-    const currSavedMeme = _createMeme(memeId, imgId, canvasData, gMeme.lines)
+    
+    const imgIdx = getImgById(gImgs, +imgId)
+    if (imgIdx === -1) return
+    
+    const img = new Image()
+    img.src = gImgs[imgIdx].url
 
-    gSavedMeme.unshift(currSavedMeme)
-    saveToStorage(STORAGE_SAVED_MEME, gSavedMeme)
+    img.onload = () => {
+        gElCanvas.width = img.width
+        gElCanvas.height = img.height
 
-    renderMeme()
-    renderSavedMemes()
+        gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+
+        gMeme.lines.forEach((line, idx) => {
+            drawText(line.txt, line.x, line.y, idx, true) 
+        })
+
+        const canvasData = gElCanvas.toDataURL('image/jpeg')
+        const currSavedMeme = _createMeme(memeId, imgId, canvasData, gMeme.lines)
+
+        gSavedMeme.unshift(currSavedMeme)
+
+        saveToStorage(STORAGE_SAVED_MEME, gSavedMeme)
+        renderMeme(false)
+        renderSavedMemes()
+    }
 }
 
 function removeMeme(id){
@@ -118,7 +133,7 @@ function drawText(text, x, y,idx, hideBorder = false) {
     if (!hideBorder && lineIdx === idx) drawBorder(text,x,y, lineIdx)
 }
 
-function drawBorder(text,x,y,lineIdx){ //update also after alignmenet
+function drawBorder(text,x,y,lineIdx){
     const space = 10
     const textMeasure = gCtx.measureText(text)
     const lineWidth = textMeasure.width + space * 2
@@ -146,7 +161,7 @@ function setText(txt) {
     renderMeme()
 }
 
-function addTxtLine(txt){
+function addTxtLine(txt){ // TEXT - SHOULD ADD - DON'T OVERRIDE LINES !!!!
     const newLine = _createLine()
     newLine.txt = txt
     gMeme.lines.push(newLine)
@@ -176,9 +191,7 @@ function removeTxtLine(){
     renderMeme()
 }
 
-// TEXT - SHOULD ADD - DON'T OVERRIDE LINES !!!!
-
-function getImgById(arr, id){ //getImgById(gSavedMeme,memeId)
+function getImgById(arr, id){
     if (arr === gImgs){
         return arr.findIndex(img => img.id === id)
     } else {
