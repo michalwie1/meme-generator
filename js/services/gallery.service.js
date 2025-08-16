@@ -3,7 +3,7 @@
 var gImgs = []
 
 function setImg(imgId) {
-    const imgIdx = getImgById(imgId)
+    const imgIdx = getImgById(gImgs,+imgId)
     if (imgIdx === -1) return
     
     const img = new Image()   

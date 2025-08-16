@@ -10,6 +10,7 @@
 @import url('components/nav.css');
 @import url('components/editor.css');
 @import url('components/canvas-board.css');
+@import url('components/saved-memes.css');
 
 /* SETUP */
 @import url('setup/vars.css');

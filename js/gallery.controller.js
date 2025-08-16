@@ -4,6 +4,7 @@ function onOpenGallery(){
     const elGallery = document.querySelector('.gallery')
     elGallery.show()
 
+    closeSavedModal()
 }
 
 function renderGallery(){
@@ -15,7 +16,6 @@ function renderGallery(){
             `
         <div class="img-wrapper">
             <img src="${img.url}" alt="Loaded Image" onclick=onSelectImg(this) id="${img.id}">
-            <button class="btn-close" onclick=onRemoveImg('${img.id}')>X</button>
         </div>
             ` 
     })
@@ -29,6 +29,5 @@ function onSelectImg(elImg) {
 
     setImg(elImg.id)
 
-    const elGallery = document.querySelector('.gallery')
-    elGallery.close()
+    closeGalleryModal()
 }

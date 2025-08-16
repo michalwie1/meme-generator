@@ -12,8 +12,9 @@
         <h1>Meme Generator</h1>
         <nav>
             <ul>
-                <li onclick="onOpenGallery()">Gallery</li>
+                <li onclick="onOpenGallery(this)">Gallery</li>
                 <li><a href="index.html">Editor</a></li>
+                <li onclick="onOpenSavedMemes(this)">Saved Memes</li>
             </ul>
         </nav>
     </header>
@@ -21,6 +22,9 @@
     <main>
 
         <dialog class="gallery">
+        </dialog>
+
+        <dialog class="saved-memes">
         </dialog>
 
         <!-- CANVAS -->
@@ -112,10 +116,24 @@
                 
                 <!-- DOWNLOAD -->
                 <a href="#" onclick="onDownloadImg(this)" download="my-meme.jpeg">
-                    <i class="fa-solid fa-download" title="download image"></i>
+                    <i class="fa-solid fa-download" title="Download image"></i>
                 </a>
-            </div>
-
+                
+                <!-- SAVE -->
+                
+                <form
+                action=""
+                method="POST"
+                enctype="multipart/form-data"
+                onsubmit="onSaveMeme(event)">
+                <input name="img" id="imgData" type="hidden"/>
+                    <button class="btn-save" type="submit" title="Save meme">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                    </button>
+                    
+                </form>
+        
+        </div>
 
             <!-- SAVE -->
              

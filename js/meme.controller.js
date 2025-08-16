@@ -8,6 +8,7 @@ var gLastPos
 function onInit(){
     _createImgs()
     renderGallery()
+    renderSavedMemes()
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
@@ -89,6 +90,36 @@ function onDown(ev) {
     gLastPos = pos
 }
 
+function onOpenSavedMemes(){
+    renderSavedMemes() 
+    const ElSavedMemes = document.querySelector('.saved-memes')
+    ElSavedMemes.show()
+
+    closeGalleryModal()
+
+    // this.style.color = 'var(--clr3)' //add color for selected page on nav bar
+}
+
+function onSaveMeme(ev){
+    ev.preventDefault()
+    saveMeme()
+
+    // const ElSavedMemes = document.querySelector('.saved-memes')
+    // ElSavedMemes.show()
+    // renderSavedMemes() 
+}
+
+function onRemoveMeme(memeId){
+    removeMeme(memeId)
+    renderSavedMemes()
+}
+
+function onSelectMeme(memeId) { //open saved memes?
+    closeSavedModal()
+    closeGalleryModal()
+
+    loadSavedMeme(memeId)
+}
 
 function onMove(ev) { //not moving on x axis, only y ???
     ev.preventDefault()
@@ -116,6 +147,16 @@ function onMove(ev) { //not moving on x axis, only y ???
 
 function onUp() {
     setLineDrag(false)
+}
+
+function closeGalleryModal(){
+    const elGallery = document.querySelector('.gallery')
+    elGallery.close()
+}
+
+function closeSavedModal(){
+    const elSavedMemes = document.querySelector('.saved-memes')
+    elSavedMemes.close()
 }
 
 

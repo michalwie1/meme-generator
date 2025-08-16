@@ -1,8 +1,10 @@
 .gallery{
-    transition: .5ms;  /* CHECK!!!! */
+    transition: .5ms;
     background-color: var(--clr2);
     border: none;
     text-align: center;
+    width: 100vw;
+    height: 90vh;
 }
 
 .gallery .img-wrapper {
@@ -20,19 +22,5 @@
 }
 
 .gallery .img-wrapper img:hover{
-    opacity: .3;
-}
-
-.gallery .img-wrapper .btn-close {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    border-radius: 20%;
-    background: white;
-    border: 1px solid black;
-    cursor: pointer;
-}
-
-.gallery .img-wrapper .btn-close:hover{
     opacity: .3;
 }

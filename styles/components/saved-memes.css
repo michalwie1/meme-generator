@@ -1,0 +1,40 @@
+.saved-memes{
+    transition: .5ms;  
+    background-color: var(--clr2);
+    border: none;
+    text-align: center;
+    width: 100vw;
+    height: 90vh;
+}
+
+.saved-memes .img-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: .5em;
+}
+
+.saved-memes .img-wrapper img {
+    max-width: 35vw;
+    border: 1px solid black;
+    display: block;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.saved-memes .img-wrapper img:hover{
+    opacity: .3;
+}
+
+.saved-memes .img-wrapper .btn-close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    border-radius: 20%;
+    background: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.saved-memes .img-wrapper .btn-close:hover{
+    opacity: .3;
+}

@@ -21,7 +21,7 @@ nav ul li{
     text-decoration: none;
     padding: .5em 2em;
     border-bottom: 1px solid var(--clr2);
-    transition: color 0.5s, border-bottom-color 0.5s;
+    transition: 0.5s;
     max-width: fit-content;
     margin: 0 .5em;
 }
@@ -31,11 +31,10 @@ nav ul li a{
     text-decoration: none;
 }
 
-nav ul li a:hover{
+nav ul li a:hover ,nav ul li:hover{
     color: var(--clr3);
     text-decoration: none;
 }
-
 
 nav ul li:hover{
     color: var(--clr3);

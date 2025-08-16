@@ -20,7 +20,7 @@
     border-radius: 10px;
  }
 
- .editor button:not(btn-share){
+ .editor button:not(btn-share,btn-save){
     border: none;
     margin: 0 1em;
     border-radius: 10px;
@@ -100,7 +100,7 @@
     border-radius: 10%;
 }
 
-.editor .btn-share {
+.editor .btn-share, .editor .btn-save {
     background-color: transparent;
     font-size: .9em;
     margin: 0;
