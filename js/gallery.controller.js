@@ -5,6 +5,7 @@ function onOpenGallery(){
     elGallery.show()
 
     closeSavedModal()
+    onNavClick('gallery')
 }
 
 function renderGallery(){

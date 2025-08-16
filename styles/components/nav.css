@@ -41,3 +41,7 @@ nav ul li:hover{
     border-bottom-color: var(--clr3);
 }
 
+nav .clicked, nav .clicked a {
+    color: var(--clr3);
+    border-bottom-color: var(--clr3);
+}

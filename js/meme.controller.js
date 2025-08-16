@@ -18,6 +18,17 @@ function onInit(){
     resizeCanvas()
     gMeme.lines[0].x = gElCanvas.width / 2
     renderMeme()
+
+    onNavClick('editor')
+    // onNavClick('editor a')
+}
+
+function onNavClick(el){
+    const elClicked = document.querySelector('.clicked')
+    if (elClicked) elClicked.classList.remove('clicked')
+
+    const elEditorHeader = document.querySelector(`.nav-${el}`)
+    elEditorHeader.classList.toggle('clicked')
 }
 
 function resizeCanvas() {
@@ -99,8 +110,7 @@ function onOpenSavedMemes(){
     ElSavedMemes.show()
 
     closeGalleryModal()
-
-    // this.style.color = 'var(--clr3)' //add color for selected page on nav bar
+    onNavClick('saved')
 }
 
 function onSaveMeme(ev){
