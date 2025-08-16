@@ -1,61 +1,37 @@
 'use strict'
 
-var gMeme = {
- selectedImgId: 5,
- selectedLineIdx: 0,
- lines: [
- {
- txt: 'Write you text here...',
- size: 30,
- align: 'center',
- fontColor: 'white',
- borderColor: 'black',
- font: 'monospace',
- x: 0,
- y: 50,
- isDrag: false
- }
- ]
-}
-
-var gImgs = []
+var gMeme
 var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
 
 
 function getMeme(){
-    return gMeme
+    return {
+                selectedImgId: 5,
+                selectedLineIdx: 0,
+                lines: [
+                    {
+                        txt: 'Write you text here...',
+                        size: 30,
+                        align: 'center',
+                        fontColor: 'white',
+                        borderColor: 'black',
+                        font: 'Arial',
+                        x: gElCanvas.width / 2,
+                        y: 50,
+                        isDrag: false
+                    }
+                ]
+           }
 }
 
 function renderMeme(){
-    const imgId =  gMeme.selectedImgId //check!!!!!!!??
+    const imgId =  gMeme.selectedImgId
     setImg(imgId)
-}
-
-function setImg(imgId) {
-    const imgIdx = getImgById(imgId)
-    if (imgIdx === -1) return
-    
-    const img = new Image()   
-    img.src = gImgs[imgIdx].url
-    
-    img.onload = () => {
-        gElCanvas.width = img.width
-        gElCanvas.height = img.height
-
-        gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-
-        gMeme.lines[gMeme.selectedLineIdx].x = gElCanvas.width / 2 //needed?
-
-        gMeme.lines.forEach((line,idx) => {
-            drawText(line.txt, line.x, line.y, idx)
-        })
-    }
 }
 
 function drawText(text, x, y,idx) {
     const lineIdx = gMeme.selectedLineIdx
-    const line = gMeme.lines[lineIdx]
+    const line = gMeme.lines[idx]
 
     gCtx.lineWidth = 1.5
     gCtx.font = `bold ${line.size}px ${line.font}`
@@ -66,9 +42,6 @@ function drawText(text, x, y,idx) {
 
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
-
-    console.log('draw text x',x)
-    console.log('draw text y',y)
 
     if (lineIdx === idx) drawBorder(text,x,y, lineIdx)
 }
@@ -113,6 +86,8 @@ function switchTxtLine(){
 
 function removeTxtLine(){
     gMeme.lines.splice(gMeme.selectedLineIdx,1)
+
+    updateLineIdx()
     renderMeme()
 }
 
@@ -125,9 +100,9 @@ function getImgById(imgId){
     return gImgs.findIndex(img => +img.id === +imgId)
 }
 
-function setTxtSize(size){
+function setTxtSize(size){ 
     const lineIdx = gMeme.selectedLineIdx
-    const line = gMeme[lineIdx]
+    const line = gMeme.lines[lineIdx]
 
     if (size ==='increase' && line.size < 60){
         line.size += 2
@@ -141,10 +116,20 @@ function setTxtSize(size){
     renderMeme()
 }
 
-function setTxtAlign(alignment){ //MAKE SURE THIS STAYS IN THE CANVAS
+function setTxtAlign(alignment){ //if (textMeasure > gElCanvas.width), if txt overflow?
     const lineIdx = gMeme.selectedLineIdx
+    const line = gMeme.lines[lineIdx]
 
-    gMeme.lines[lineIdx].align = alignment
+    line.align = alignment
+
+    if (line.align === 'left') {
+        line.x = 10 
+    } else if (line.align === 'right') {
+        line.x = gElCanvas.width
+    } else if (line.align === 'center') {
+        line.x = gElCanvas.width / 2
+    }
+
     renderMeme()
 }
 
@@ -236,14 +221,15 @@ function setLineDrag(isDrag) {
     gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
 }
 
+function updateLineIdx(){
+    gMeme.selectedLineIdx = gMeme.selectedLineIdx > 0 ? gMeme.selectedLineIdx - 1 : 0
+}
 
 
 function _createImgs(){
     for (var i = 1; i < 18; i++) {
         gImgs.push(_createImg(i,['cat','dog'])) //should change the array keywords
     }
-
-    console.log(gImgs)
 }
 
 function _createImg(id,keywords){
@@ -261,7 +247,7 @@ function _createLine(){
         align: 'center',
         fontColor: 'white',
         borderColor: 'black',
-        font: 'monospace',
+        font: 'Arial',
         x: gElCanvas.width / 2,
         y: gMeme.lines.length ? gMeme.lines[gMeme.lines.length - 1].y + 50 : 50,
         isDrag: false

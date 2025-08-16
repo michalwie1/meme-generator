@@ -11,6 +11,9 @@ function onInit(){
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
+    gMeme = getMeme()
+    resizeCanvas()
+    gMeme.lines[0].x = gElCanvas.width / 2
     renderMeme()
 }
 
@@ -26,46 +29,13 @@ function resizeCanvas() {
     }
 }
 
-
-
-function onOpenGallery(){
-    const elGallery = document.querySelector('.gallery')
-    elGallery.show()
-
-}
-
  // WHEN CLICKING ON BACKGROUND GO TO EDITOR??? *****
 // function onCloseGallery(){
 //     const elGallery = document.querySelector('.gallery')
 //     elGallery.close()
 // }
 
-function renderGallery(){
-    let strHtml = ''
-    const elGallery = document.querySelector('.gallery')
 
-    gImgs.forEach(img => {
-        strHtml +=
-            `
-        <div class="img-wrapper">
-            <img src="${img.url}" alt="Loaded Image" onclick=onSelectImg(this) id="${img.id}">
-            <button class="btn-close" onclick=onRemoveImg('${img.id}')>X</button>
-        </div>
-            ` 
-    })
-
-    elGallery.innerHTML = strHtml
-}
-
-function onSelectImg(elImg) {
-    gMeme.selectedImgId = elImg.id
-    saveToStorage('selectedImgId', +elImg.id)
-
-    setImg(elImg.id)
-
-    const elGallery = document.querySelector('.gallery')
-    elGallery.close()
-}
 
 
 function onSetTxt(txt){

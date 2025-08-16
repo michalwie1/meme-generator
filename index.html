@@ -78,13 +78,13 @@
 
                 <!-- ADD FONT FAMILY OPTIONS -->
                 <select class="font-family" onchange="onSetFont(this.value)"> 
-                    <option value="Monospace">Monospace</option>
                     <option value="Arial">Arial</option>
+                    <option value="Monospace">Monospace</option>
                     <option value="Times New Roman">Times New Roman</option>
                 </select>
  
-                <input type="color" title="Text color" onchange="onSetTxtColor(this.value)">
-                <input type="color" title="Border color" onchange="onSetBorderColor(this.value)">
+                <input type="color" title="Text color" oninput="onSetTxtColor(this.value)">
+                <input type="color" title="Border color" oninput="onSetBorderColor(this.value)">
 
             </div>
 
@@ -148,7 +148,9 @@
     </footer>
 
         <script src="js/meme.controller.js"></script>
+        <script src="js/gallery.controller.js"></script>
         <script src="js/services/meme.service.js"></script>
+        <script src="js/services/gallery.service.js"></script>
         <script src="js/services/storage.service.js"></script>
         <script src="js/services/util.service.js"></script>
 
