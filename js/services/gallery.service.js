@@ -2,7 +2,7 @@
 
 var gImgs = []
 
-function setImg(imgId) {
+function setImg(imgId, hideBorder = false) {
     const imgIdx = getImgById(gImgs,+imgId)
     if (imgIdx === -1) return
     
@@ -19,7 +19,7 @@ function setImg(imgId) {
         // gMeme.lines[gMeme.selectedLineIdx].x = gElCanvas.width / 2 //needed?
 
         gMeme.lines.forEach((line,idx) => {
-            drawText(line.txt, line.x, line.y, idx)
+            drawText(line.txt, line.x, line.y, idx, hideBorder)
         })
     }
 }

@@ -24,13 +24,14 @@ function getMeme(){
            }
 }
 
-function renderMeme(){
-    const imgId =  loadFromStorage('selectedImgId')
-    setImg(imgId)
+function renderMeme(hideBorder = false){
+    const imgId = loadFromStorage(STORAGE_CURR_MEME).selectedImgId
+    saveToStorage(STORAGE_CURR_MEME, gMeme)
+    setImg(imgId, hideBorder)
 }
 
 function renderSavedMemes(){
-    gSavedMeme = loadFromStorage(STORAGE_KEY)
+    gSavedMeme = loadFromStorage(STORAGE_SAVED_MEME)
     let strHtml = ''
     const ElSavedMemes = document.querySelector('.saved-memes')
 
@@ -47,17 +48,21 @@ function renderSavedMemes(){
     ElSavedMemes.innerHTML = strHtml
 }
 
-function saveMeme(){    
-    //remove border!!!!!
+
+function saveMeme() {
+    renderMeme(true)
+    
     const canvasData = gElCanvas.toDataURL('image/jpeg')
-    const imgId = loadFromStorage('selectedImgId') //add more and more
+    console.log('canvasData',canvasData)
+    const imgId = loadFromStorage(STORAGE_CURR_MEME).selectedImgId
     const memeId = generateId()
-    const currSavedMeme = _createMeme(memeId, imgId,canvasData, gMeme.lines)
+    const currSavedMeme = _createMeme(memeId, imgId, canvasData, gMeme.lines)
 
     gSavedMeme.unshift(currSavedMeme)
-    saveToStorage(STORAGE_KEY,gSavedMeme)
+    saveToStorage(STORAGE_SAVED_MEME, gSavedMeme)
 
-    renderSavedMemes() 
+    renderMeme()
+    renderSavedMemes()
 }
 
 function removeMeme(id){
@@ -66,7 +71,7 @@ function removeMeme(id){
     if (memeIdx === -1) return
 
     gSavedMeme.splice(memeIdx, 1)
-    saveToStorage(STORAGE_KEY,gSavedMeme)
+    saveToStorage(STORAGE_SAVED_MEME,gSavedMeme)
 }
 
 function loadSavedMeme(memeId){
@@ -75,7 +80,7 @@ function loadSavedMeme(memeId){
     const imgId = meme.imgId
     const img = new Image()
 
-    saveToStorage('selectedImgId',imgId)
+    saveToStorage(STORAGE_CURR_MEME, gMeme)
     gMeme.selectedLineIdx = 0
     gMeme.selectedImgId = imgId
     gMeme.lines = meme.lines
@@ -96,7 +101,7 @@ function loadSavedMeme(memeId){
 
 }
 
-function drawText(text, x, y,idx) {
+function drawText(text, x, y,idx, hideBorder = false) {
     const lineIdx = gMeme.selectedLineIdx
     const line = gMeme.lines[idx]
 
@@ -110,7 +115,7 @@ function drawText(text, x, y,idx) {
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 
-    if (lineIdx === idx) drawBorder(text,x,y, lineIdx)
+    if (!hideBorder && lineIdx === idx) drawBorder(text,x,y, lineIdx)
 }
 
 function drawBorder(text,x,y,lineIdx){

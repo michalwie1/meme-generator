@@ -24,10 +24,9 @@ function renderGallery(){
 }
 
 function onSelectImg(elImg) {
-    gMeme.selectedImgId = elImg.id
-    saveToStorage('selectedImgId', +elImg.id)
+    gMeme.selectedImgId = +elImg.id
 
+    saveToStorage(STORAGE_CURR_MEME, gMeme)
     setImg(elImg.id)
-
     closeGalleryModal()
 }

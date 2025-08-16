@@ -12,7 +12,9 @@ function onInit(){
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    gMeme = getMeme()
+    // gMeme = loadFromStorage(STORAGE_CURR_MEME) || getMeme()
+    gMeme =  getMeme()
+
     resizeCanvas()
     gMeme.lines[0].x = gElCanvas.width / 2
     renderMeme()
@@ -49,6 +51,7 @@ function onRemoveTxtLine(){
 }
 
 function onDownloadImg(elLink){ 
+    renderMeme(true)
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
 }
