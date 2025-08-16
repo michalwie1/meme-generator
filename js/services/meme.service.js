@@ -118,7 +118,7 @@ function drawText(text, x, y,idx, hideBorder = false) {
     if (!hideBorder && lineIdx === idx) drawBorder(text,x,y, lineIdx)
 }
 
-function drawBorder(text,x,y,lineIdx){
+function drawBorder(text,x,y,lineIdx){ //update also after alignmenet
     const space = 10
     const textMeasure = gCtx.measureText(text)
     const lineWidth = textMeasure.width + space * 2
@@ -126,7 +126,19 @@ function drawBorder(text,x,y,lineIdx){
 
     gCtx.strokeStyle = 'black'
     gCtx.lineWidth = 1
-    gCtx.strokeRect(x - lineWidth / 2, y - lineHeight / 2, lineWidth, lineHeight)
+
+    let squareX
+    const align = gMeme.lines[lineIdx].align
+
+    if (align === 'center') {
+        squareX = x - lineWidth / 2
+    } else if (align === 'left') {
+        squareX = x - space
+    } else if (align === 'right') {
+        squareX = x - lineWidth + space
+    }
+
+    gCtx.strokeRect(squareX, y - lineHeight / 2, lineWidth, lineHeight)
 }
 
 function setText(txt) {

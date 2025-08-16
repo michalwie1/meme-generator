@@ -1,0 +1,17 @@
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: .5em;
+}
+
+.img-wrapper img {
+    max-width: 45vw;
+    border: 1px solid black;
+    display: block;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.img-wrapper img:hover{
+    opacity: .3;
+}

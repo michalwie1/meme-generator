@@ -4,19 +4,32 @@
 
 html{
     font-family: monospace;
-    font-size: 1.3em;
+    font-size: .5em;
     background-color: var(--clr2);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
+
+/* html, body {
+    height: 100%;
+    margin: 0;
+    font-family: monospace;
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr2);
+} */
 
 body{
     margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 main{
-    display: block;
     margin: 1em 0;
-    
-    /* grid-template-columns: 1fr 1fr;
-    column-gap: 1.3em; */
-
 }

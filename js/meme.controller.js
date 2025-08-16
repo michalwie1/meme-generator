@@ -153,7 +153,8 @@ function onMove(ev) { //not moving on x axis, only y ???
     line.x += dx
     line.y += dy
 
-    gLastPos = pos
+    gLastPos = pos 
+    console.log('gLastPos',gLastPos)
     renderMeme()
 }
 
