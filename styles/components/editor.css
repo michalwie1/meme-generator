@@ -28,6 +28,11 @@
     cursor: pointer;
  }
 
+ .editor button:hover, .editor .share i:hover{
+    background-color: var(--clr3);
+    color: white;
+ }
+
 .editor .txt-box input{
     font-family: monospace;
     border-radius: 20px;
@@ -92,6 +97,7 @@
     padding: 1em 1em;
     font-size: .9em;
     color: black;
+    border-radius: 10%;
 }
 
 .editor .btn-share {
