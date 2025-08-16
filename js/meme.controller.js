@@ -29,15 +29,6 @@ function resizeCanvas() {
     }
 }
 
- // WHEN CLICKING ON BACKGROUND GO TO EDITOR??? *****
-// function onCloseGallery(){
-//     const elGallery = document.querySelector('.gallery')
-//     elGallery.close()
-// }
-
-
-
-
 function onSetTxt(txt){
     setText(txt)
 }
@@ -45,13 +36,10 @@ function onSetTxt(txt){
 function onAddTxtLine(){
     const elTxtLine = document.querySelector('.txt-box input')
     elTxtLine.value = 'Write your new line here...'
-    addTxtLine()
+    addTxtLine(elTxtLine.value)
 }
 
 function onSwitchTxtLine(){
-    // const elTxtLine = document.querySelector('.txt-box input')
-    // elTxtLine.value = 'Write your new line here...'
-
     switchTxtLine()
 }
 
@@ -87,18 +75,6 @@ function onSetBorderColor(color){
 
 function onSetEmoji(elEmoji){
     setEmoji(elEmoji)
-    // const elSelectImg = document.querySelectorAll('.select-img ul li')
-    
-    // // elSelectImg.forEach(img => {    
-    // //     if (img !== elImg) {
-    // //     img.classList.add('bw-img') 
-    // // }})
-
-    // // elImg.classList.toggle('bw-img')
-    // gEmojiSelected = elEmoji.innerText
-    
-    // onSetShape('emoji')
-    // drawEmoji(gEmojiSelected, gCanvasProp.pos.x, gCanvasProp.pos.y)
 }
 
 // DRAG & DROP :

@@ -62,8 +62,9 @@ function setText(txt) {
     renderMeme()
 }
 
-function addTxtLine(){
+function addTxtLine(txt){
     const newLine = _createLine()
+    newLine.txt = txt
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 
@@ -111,7 +112,6 @@ function setTxtSize(size){
         line.size -= 2
     }
     else return
-    console.log(line.size)
 
     renderMeme()
 }
@@ -156,13 +156,14 @@ function setBorderColor(color){
 
 function setEmoji(elEmoji){ // should check, override lines?
     const emojiSelected = elEmoji.innerText
+    addTxtLine(emojiSelected)
     drawEmoji(emojiSelected, gMeme.lines[gMeme.selectedLineIdx].x, gMeme.lines[gMeme.selectedLineIdx].y)
 }
 
 function drawEmoji(emoji, x, y) {
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'brown'
-    gCtx.font = '40px Arial'
+    gCtx.font = '40px'
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
     gCtx.fillText(emoji, x, y)
