@@ -11,6 +11,14 @@
         margin: 1em 0;
     }
 
+    header h1{
+        font-size: 2em;
+    }
+
+    header nav li {
+        font-size: 1em;
+    }
+
     .editor{
         /* margin-top: 1em; */
         justify-self: center;
