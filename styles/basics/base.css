@@ -4,7 +4,7 @@
 
 html{
     font-family: monospace;
-    font-size: .5em;
+    font-size: 1.3em;
     background-color: var(--clr2);
     height: 100%;
     width: 100%;
@@ -12,16 +12,6 @@ html{
     display: flex;
     flex-direction: column;
 }
-
-/* html, body {
-    height: 100%;
-    margin: 0;
-    font-family: monospace;
-    font-size: 1.3em;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--clr2);
-} */
 
 body{
     margin: 0;

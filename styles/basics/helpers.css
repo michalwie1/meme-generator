@@ -1,3 +1,11 @@
+dialog {
+    border: none;
+}
+
+.hidden {
+opacity: 0;
+}
+
 .img-wrapper {
     position: relative;
     display: inline-block;
@@ -15,3 +23,4 @@
 .img-wrapper img:hover{
     opacity: .3;
 }
+

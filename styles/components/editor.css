@@ -72,16 +72,24 @@
 
 .editor .emoji{
     display: flex;
-    cursor: pointer;
     justify-content: center;
+    cursor: pointer;
 }
 
 .editor .emoji ul{
     display: flex;
     list-style-type: none;
-    font-size: 1.5em;
+    font-size: 1.9em;
     letter-spacing: 1em;
-    justify-content: end;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.editor .emoji ul li {
+    display: flex;
+    justify-self: center;
+    text-align: center;
 }
 
 .editor .emoji ul li:hover{
@@ -95,14 +103,14 @@
 
 .editor .share i {
     padding: 1em 1em;
-    font-size: .9em;
+    font-size: 1em;
     color: black;
     border-radius: 10%;
 }
 
 .editor .btn-share, .editor .btn-save {
     background-color: transparent;
-    font-size: .9em;
+    font-size: 1em;
     margin: 0;
 }
 

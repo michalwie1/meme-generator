@@ -40,6 +40,7 @@
 
 /* DESKTOP */
 @media (min-width: 930px){
+
     main{
         display: grid;
         gap: 2em;

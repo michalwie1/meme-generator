@@ -6,6 +6,9 @@ function onOpenGallery(){
 
     closeSavedModal()
     onNavClick('gallery')
+
+    const elEditor = document. querySelector.apply('.editor')
+    elEditor.classlist.add('hidden') 
 }
 
 function renderGallery(){
