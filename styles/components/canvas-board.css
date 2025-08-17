@@ -2,7 +2,6 @@
     grid-column: 1;
     display: flex;
     justify-self: center;
-    /* width: 50vw; */
     background-color: transparent;
     border: 2px solid var(--clr3);
     border-radius: 10%;

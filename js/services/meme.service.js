@@ -5,8 +5,12 @@ var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
 var gSavedMeme = []
 
 function getMeme(){
-    if (loadFromStorage(STORAGE_CURR_MEME)) return loadFromStorage(STORAGE_CURR_MEME)
-    else return {
+    const storedMeme = loadFromStorage(STORAGE_CURR_MEME)
+    
+    if (storedMeme && Array.isArray(storedMeme.lines) && storedMeme.lines.length > 0) {
+        return storedMeme
+    }
+        else return {
                 selectedImgId: 5,
                 selectedLineIdx: 0,
                 lines: [
@@ -163,7 +167,7 @@ function setText(txt) {
     renderMeme()
 }
 
-function addTxtLine(txt){ // TEXT - SHOULD ADD - DON'T OVERRIDE LINES !!!!
+function addTxtLine(txt){
     const newLine = _createLine('Write your new line here...')
     newLine.txt = txt
     gMeme.lines.push(newLine)
@@ -254,7 +258,7 @@ function setBorderColor(color){
     renderMeme()
 }
 
-function setEmoji(elEmoji){ // should check, override lines?
+function setEmoji(elEmoji){
     const emojiSelected = elEmoji.innerText
     addTxtLine(emojiSelected)
     drawEmoji(emojiSelected, gMeme.lines[gMeme.selectedLineIdx].x, gMeme.lines[gMeme.selectedLineIdx].y)
@@ -270,24 +274,17 @@ function drawEmoji(emoji, x, y) {
     gCtx.strokeText(emoji, x, y)
 }
 
-function isLineClicked(clickedPos) { //update
+function isLineClicked(clickedPos) {
     const space = 10
     const line = gMeme.lines[gMeme.selectedLineIdx]
     const textMeasure = gCtx.measureText(line.txt)
-    // const width = textMeasure.width
-    // const height = line.size
     const lineWidth = textMeasure.width + space * 2
     const lineHeight = line.size + space
-
-    // line.x = gElCanvas.width / 2
-
 
     const xStart = line.x - lineWidth / 2
     const xEnd = line.x + lineWidth
     const yStart = line.y - lineHeight / 2
     const yEnd = line.y + lineHeight 
-
-    // gCtx.strokeRect(x - lineWidth / 2, y - lineHeight / 2, lineWidth, lineHeight)
 
     return (
         clickedPos.x >= xStart &&
@@ -379,4 +376,11 @@ function _createMeme (memeId, imgId, url,lines){
         url,
         lines
      }
+}
+
+function toTopPage(){
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto'
+    })
 }

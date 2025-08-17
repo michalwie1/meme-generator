@@ -3,13 +3,11 @@ header{
     color: var(--clr2);
     padding: 0;
     max-height: var(--header-height);
-
 }
 
 header h1{
   text-align: center;
   padding: 0;
-  /* padding-bottom: .3em; */
   font-size: 1.2em;
 }
 

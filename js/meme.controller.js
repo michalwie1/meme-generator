@@ -14,8 +14,8 @@ function onInit(){
 
     gMeme =  getMeme()
     resizeCanvas()
-    renderMeme()
     gMeme.lines[0].x = gElCanvas.width / 2
+    renderMeme()
 
 
     const elMain = document. querySelector('main')
@@ -37,9 +37,6 @@ function onNavClick(el){
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-board')
     gElCanvas.width = elContainer.clientWidth
-
-    // const elEditor = document.querySelector('.editor')
-    // elEditor.style.width = elContainer.clientWidth
 
     if (gMeme.selectedImgId) {
     setImg(gMeme.selectedImgId)
@@ -113,23 +110,14 @@ function onOpenSavedMemes(){
     ElSavedMemes.show()
 
     onNavClick('saved')
-    
-    // closeGalleryModal()
     closeModal('.gallery')
     elMainToggle('hide')
-    // elMainToggle('hide')
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'auto'
-    })
+    toTopPage()
 }
 
 function onSaveMeme(ev){
     ev.preventDefault()
     saveMeme()
-
-    // renderSavedMemes() 
 }
 
 function onRemoveMeme(memeId){
@@ -137,7 +125,7 @@ function onRemoveMeme(memeId){
     renderSavedMemes()
 }
 
-function onSelectMeme(memeId) { //open saved memes?
+function onSelectMeme(memeId) { 
     closeModal('.gallery')
     closeModal('.saved-memes')
     onNavClick('editor')
@@ -158,7 +146,7 @@ function onShowMsg(msg){
         }, 2500)
 }
 
-function onMove(ev) { //not moving on x axis, only y ???
+function onMove(ev) {
     ev.preventDefault()
     const pos = getEvPos(ev)
     const line = gMeme.lines[gMeme.selectedLineIdx]

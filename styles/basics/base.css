@@ -6,7 +6,6 @@ html{
     font-family: monospace;
     font-size: 1.3em;
     background-color: var(--clr2);
-    /* height: 100%; */
     width: 100vw;
     margin: 0;
     display: flex;

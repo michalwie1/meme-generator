@@ -1,11 +1,9 @@
 :root{
-
     /* COLORS */
     --clr1: #3a3ada;
     --clr2: #e9e9ed;
     --clr3: #060668;
     --clr4: #9898da;
-
 
     /* HEADER & FOOTER */
     --header-height: 10em;

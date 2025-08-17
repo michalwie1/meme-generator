@@ -4,15 +4,10 @@ function onOpenGallery(){
     const elGallery = document.querySelector('.gallery')
     elGallery.show()
 
-    // closeSavedModal()
     closeModal('.saved-memes')
     onNavClick('gallery')
-   elMainToggle('hide')
-
-   window.scrollTo({
-      top: 0,
-      behavior: 'auto'
-    })
+    elMainToggle('hide')
+    toTopPage()
 }
 
 function renderGallery(){
