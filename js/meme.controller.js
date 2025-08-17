@@ -13,10 +13,10 @@ function onInit(){
     gCtx = gElCanvas.getContext('2d')
 
     gMeme =  getMeme()
-    gMeme.lines[0].x = gElCanvas.width / 2
-
     resizeCanvas()
     renderMeme()
+    gMeme.lines[0].x = gElCanvas.width / 2
+
 
     const elMain = document. querySelector('main')
     elMain.classList.remove('hidden') 
@@ -191,17 +191,22 @@ function closeModal(className){
     elModal.close()
 }
 
-// function elMainToggle(){
-//     const elMain = document.querySelector('main')
-//      elMain.classList.toggle('hidden')
-// }
-
 function elMainToggle(action){
     const elMain = document.querySelector('main')
     if (action === 'hide') elMain.classList.add('hidden')
    else  elMain.classList.remove('hidden')
 }
 
+function onUploadImg(ev) {
+    ev.preventDefault()
+    const canvasData = gElCanvas.toDataURL('image/jpeg')
+
+    function onSuccess(uploadedImgUrl) {
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+         window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
+    }
+    uploadImg(canvasData, onSuccess)
+}
 
 
 

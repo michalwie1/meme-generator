@@ -324,6 +324,26 @@ function updateLineIdx(){
     gMeme.selectedLineIdx = gMeme.selectedLineIdx > 0 ? gMeme.selectedLineIdx - 1 : 0
 }
 
+async function uploadImg(imgData, onSuccess) {
+    const CLOUD_NAME = 'webify'
+    const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+    const formData = new FormData()
+    formData.append('file', imgData)
+    formData.append('upload_preset', 'webify')
+    try {
+        const res = await fetch(UPLOAD_URL, {
+            method: 'POST',
+            body: formData
+        })
+        const data = await res.json()
+        onSuccess(data.secure_url)
+
+
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 function _createImgs(){
     for (var i = 1; i < 18; i++) {
         gImgs.push(_createImg(i,['cat','dog'])) //should change the array keywords
