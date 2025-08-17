@@ -7,7 +7,7 @@ function onOpenGallery(){
     // closeSavedModal()
     closeModal('.saved-memes')
     onNavClick('gallery')
-   elMainToggle
+   elMainToggle('hide')
 
    window.scrollTo({
       top: 0,
@@ -37,7 +37,7 @@ function onSelectImg(elImg) {
     const elInput = document.querySelector('.txt-box input')
     elInput.value = txt
     
-
+    elMainToggle('show')
     onNavClick('editor')
     closeModal('.gallery')
     saveToStorage(STORAGE_CURR_MEME, gMeme)

@@ -1,6 +1,7 @@
-/* dialog {
+dialog {
     border: none;
-} */
+    outline: none;
+}
 
 .hidden {
 display: none;
@@ -9,7 +10,6 @@ display: none;
 .img-wrapper {
     position: relative;
     display: inline-block;
-    /* margin: .5em; */
 }
 
 .img-wrapper img {
@@ -23,11 +23,5 @@ display: none;
 .img-wrapper img:hover{
     opacity: .3;
 }
-
-/* .background{
-    opacity: .3;
-    transition: .5s;
-} */
-
 
 

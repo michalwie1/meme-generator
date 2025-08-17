@@ -6,18 +6,8 @@
     justify-self: center;
     width: 90vw;
     padding: 2em;
-    /* height: max-content; */
     margin: 0 auto;
-
-     position: relative;
-  /* display: block;   */
-  min-height: fit-content;  
-
+    position: relative;
+    outline: none;
+    min-height: fit-content;  
 }
-
-/* display: block;   */
-/* width: 100%;     */
-/* margin: 1em;      */
-/* border: none;   */
-/* padding: 1em;  */
-/* height: auto;  */

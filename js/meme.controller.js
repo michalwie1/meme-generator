@@ -116,7 +116,8 @@ function onOpenSavedMemes(){
     
     // closeGalleryModal()
     closeModal('.gallery')
-    elMainToggle
+    elMainToggle('hide')
+    // elMainToggle('hide')
 
     window.scrollTo({
       top: 0,
@@ -140,6 +141,7 @@ function onSelectMeme(memeId) { //open saved memes?
     closeModal('.gallery')
     closeModal('.saved-memes')
     onNavClick('editor')
+    elMainToggle('show')
 
     loadSavedMeme(memeId)
 }
@@ -150,12 +152,8 @@ function onShowMsg(msg){
     const elCanvas = document.querySelector('.canvas-board')
     elUserMsg.innerText = msg
     elUserMsg.showModal()
-    // elEditor.classList.add('background')
-    // elCanvas.classList.add('background')
     
     setTimeout(() => {
-        // elEditor.classList.remove('background')
-        // elCanvas.classList.remove('background')
         elUserMsg.close()
         }, 2500)
 }
@@ -193,9 +191,15 @@ function closeModal(className){
     elModal.close()
 }
 
-function elMainToggle(){
+// function elMainToggle(){
+//     const elMain = document.querySelector('main')
+//      elMain.classList.toggle('hidden')
+// }
+
+function elMainToggle(action){
     const elMain = document.querySelector('main')
-    elMain.classList.toggle('hidden')
+    if (action === 'hide') elMain.classList.add('hidden')
+   else  elMain.classList.remove('hidden')
 }
 
 

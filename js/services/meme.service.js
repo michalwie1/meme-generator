@@ -5,7 +5,8 @@ var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
 var gSavedMeme = []
 
 function getMeme(){
-    return {
+    if (loadFromStorage(STORAGE_CURR_MEME)) return loadFromStorage(STORAGE_CURR_MEME)
+    else return {
                 selectedImgId: 5,
                 selectedLineIdx: 0,
                 lines: [
