@@ -3,17 +3,17 @@
 } */
 
 .hidden {
-opacity: 0;
+display: none;
 }
 
 .img-wrapper {
     position: relative;
     display: inline-block;
-    margin: .5em;
+    /* margin: .5em; */
 }
 
 .img-wrapper img {
-    max-width: 45vw;
+    max-width: 25vw;
     border: 1px solid black;
     display: block;
     cursor: pointer;
@@ -24,10 +24,10 @@ opacity: 0;
     opacity: .3;
 }
 
-.background{
+/* .background{
     opacity: .3;
     transition: .5s;
-}
+} */
 
 
 

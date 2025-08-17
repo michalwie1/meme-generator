@@ -6,7 +6,6 @@ nav{
 nav ul{
     display: flex;
     font-weight: 700;
-    letter-spacing: 1px;
     
     list-style-type: none;
     justify-content: center;
@@ -14,13 +13,13 @@ nav ul{
 }
 
 nav ul li{
-    font-size: .9em;
+    font-size: .6em;
     display: flex;
     justify-content: center;
     color: var(--clr2);
     cursor: pointer;
     text-decoration: none;
-    padding: .5em 2em;
+    padding: .5em .5em;
     border-bottom: 1px solid var(--clr2);
     transition: 0.5s;
     max-width: fit-content;

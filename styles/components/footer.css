@@ -4,13 +4,14 @@ footer{
     padding: 1.5em 3em; 
     text-align: center; 
     z-index: 1;
+    max-height: var(--footer-height);
+    font-size: .5em;
 }
 
 footer .social i{
     background-color: var(--clr1);
     color: var(--clr2);
-    padding: .5em .3em;
-    margin: 0 .4em;
+    padding: .3em;
     transition: 0.5s;
 }
 

@@ -12,18 +12,18 @@ function onInit(){
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    // gMeme = loadFromStorage(STORAGE_CURR_MEME) || getMeme()
     gMeme =  getMeme()
+    gMeme.lines[0].x = gElCanvas.width / 2
 
     resizeCanvas()
-    gMeme.lines[0].x = gElCanvas.width / 2
     renderMeme()
 
-    // const elEditor = document. querySelector('.editor')
-    // elEditor.classList.remove('hidden') 
+    const elMain = document. querySelector('main')
+    elMain.classList.remove('hidden') 
 
+    closeModal('.gallery')
+    closeModal('.saved-memes')
     onNavClick('editor')
-    // onNavClick('editor a')
 }
 
 function onNavClick(el){
@@ -112,8 +112,16 @@ function onOpenSavedMemes(){
     const ElSavedMemes = document.querySelector('.saved-memes')
     ElSavedMemes.show()
 
-    closeGalleryModal()
     onNavClick('saved')
+    
+    // closeGalleryModal()
+    closeModal('.gallery')
+    elMainToggle
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto'
+    })
 }
 
 function onSaveMeme(ev){
@@ -129,10 +137,27 @@ function onRemoveMeme(memeId){
 }
 
 function onSelectMeme(memeId) { //open saved memes?
-    closeSavedModal()
-    closeGalleryModal()
+    closeModal('.gallery')
+    closeModal('.saved-memes')
+    onNavClick('editor')
 
     loadSavedMeme(memeId)
+}
+
+function onShowMsg(msg){
+    const elUserMsg = document.querySelector('.user-msg') 
+    const elEditor = document.querySelector('.editor')
+    const elCanvas = document.querySelector('.canvas-board')
+    elUserMsg.innerText = msg
+    elUserMsg.showModal()
+    // elEditor.classList.add('background')
+    // elCanvas.classList.add('background')
+    
+    setTimeout(() => {
+        // elEditor.classList.remove('background')
+        // elCanvas.classList.remove('background')
+        elUserMsg.close()
+        }, 2500)
 }
 
 function onMove(ev) { //not moving on x axis, only y ???
@@ -163,16 +188,15 @@ function onUp() {
     setLineDrag(false)
 }
 
-function closeGalleryModal(){
-    const elGallery = document.querySelector('.gallery')
-    elGallery.close()
+function closeModal(className){
+    const elModal = document.querySelector(className)
+    elModal.close()
 }
 
-function closeSavedModal(){
-    const elSavedMemes = document.querySelector('.saved-memes')
-    elSavedMemes.close()
+function elMainToggle(){
+    const elMain = document.querySelector('main')
+    elMain.classList.toggle('hidden')
 }
-
 
 
 

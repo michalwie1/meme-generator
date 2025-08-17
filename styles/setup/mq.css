@@ -11,12 +11,25 @@
         margin: 1em 0;
     }
 
+    header {
+        padding: 1em;
+    }
+
     header h1{
         font-size: 2em;
     }
 
     header nav li {
         font-size: 1em;
+    }
+
+    nav ul {
+        letter-spacing: 1px;
+    }
+
+    nav ul li{
+    font-size: 1em;  
+    padding: .5em 3em;
     }
 
     .editor{
@@ -36,8 +49,20 @@
         border-radius: 30px;
     }
 
+    .img-wrapper {
+        margin: .5em;
+    }
+
     .img-wrapper img {
-    max-width: 30vw;
+        max-width: 30vw;
+    }
+
+    footer{
+        font-size: 1em;
+    }
+
+    footer .social i {
+        margin: 0 .4em;
     }
 }
 
@@ -50,7 +75,7 @@
         grid-template-columns: 1fr 1fr;
         column-gap: 3vw;
         margin: 3em 1em; 
-}
+    }
     
     .editor{
         width: 45vw;

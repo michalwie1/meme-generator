@@ -13,19 +13,20 @@
         <nav>
             <ul>
                 <li class="nav-gallery" onclick="onOpenGallery(this)">Gallery</li>
-                <li class="nav-editor"><a href="index.html">Editor</a></li>
+                <li class="nav-editor"><a onclick="onInit()" href="index.html">Editor</a></li>
                 <li class="nav-saved" onclick="onOpenSavedMemes(this)">My Memes</li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        
-        <dialog class="gallery">
-            </dialog>
-
-        <dialog class="saved-memes">
+    <dialog class="gallery">
         </dialog>
+
+    <dialog class="saved-memes">
+    </dialog>
+
+        <main>
+        
 
         <!-- CANVAS -->
         <section class="canvas-board">
@@ -160,7 +161,6 @@
 
         <script src="js/meme.controller.js"></script>
         <script src="js/gallery.controller.js"></script>
-        <script src="js/general.controller.js"></script>
         <script src="js/services/meme.service.js"></script>
         <script src="js/services/gallery.service.js"></script>
         <script src="js/services/storage.service.js"></script>

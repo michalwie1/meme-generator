@@ -4,11 +4,15 @@ function onOpenGallery(){
     const elGallery = document.querySelector('.gallery')
     elGallery.show()
 
-    closeSavedModal()
+    // closeSavedModal()
+    closeModal('.saved-memes')
     onNavClick('gallery')
+   elMainToggle
 
-    // const elEditor = document. querySelector('.editor')
-    // elEditor.classList.add('hidden') 
+   window.scrollTo({
+      top: 0,
+      behavior: 'auto'
+    })
 }
 
 function renderGallery(){
@@ -32,9 +36,10 @@ function onSelectImg(elImg) {
     gMeme.lines[gMeme.selectedLineIdx] = _createLine(txt) 
     const elInput = document.querySelector('.txt-box input')
     elInput.value = txt
+    
 
     onNavClick('editor')
+    closeModal('.gallery')
     saveToStorage(STORAGE_CURR_MEME, gMeme)
     setImg(elImg.id)
-    closeGalleryModal()
 }
