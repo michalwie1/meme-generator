@@ -1,6 +1,6 @@
-dialog {
+/* dialog {
     border: none;
-}
+} */
 
 .hidden {
 opacity: 0;
@@ -23,4 +23,11 @@ opacity: 0;
 .img-wrapper img:hover{
     opacity: .3;
 }
+
+.background{
+    opacity: .3;
+    transition: .5s;
+}
+
+
 

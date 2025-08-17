@@ -25,7 +25,11 @@
         border-radius: 30px;
         width: 60vw;
         margin-top: 1em;
-    }  
+    }
+    
+    .editor .emoji ul {
+        font-size: 1.5em;
+    }
     
     .canvas-board{
         width: 60vw;
@@ -43,20 +47,28 @@
 
     main{
         display: grid;
-        gap: 2em;
-        margin: 3em 1.5em; 
-
         grid-template-columns: 1fr 1fr;
-        column-gap: 1.3em;
+        column-gap: 3vw;
+        margin: 3em 1em; 
 }
     
     .editor{
-        width: 40vw;
+        width: 45vw;
         margin-top: 0;
-    }  
+    }
+    
+    .editor .emoji ul {
+        font-size: 2em;
+    }
+
+    .editor .share i {
+        font-size: 1.3em;
+        padding: .7em;
+        border-radius: 10px;
+    }
     
     .canvas-board{
-        width: 50vw;
+        width: 45vw;
         border-radius: 30px;
     }
 

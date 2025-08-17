@@ -7,8 +7,8 @@ function onOpenGallery(){
     closeSavedModal()
     onNavClick('gallery')
 
-    const elEditor = document. querySelector.apply('.editor')
-    elEditor.classlist.add('hidden') 
+    // const elEditor = document. querySelector('.editor')
+    // elEditor.classList.add('hidden') 
 }
 
 function renderGallery(){
@@ -23,13 +23,17 @@ function renderGallery(){
         </div>
             ` 
     })
-
     elGallery.innerHTML = strHtml
 }
 
 function onSelectImg(elImg) {
+    const txt = 'Write your line here...'
     gMeme.selectedImgId = +elImg.id
+    gMeme.lines[gMeme.selectedLineIdx] = _createLine(txt) 
+    const elInput = document.querySelector('.txt-box input')
+    elInput.value = txt
 
+    onNavClick('editor')
     saveToStorage(STORAGE_CURR_MEME, gMeme)
     setImg(elImg.id)
     closeGalleryModal()

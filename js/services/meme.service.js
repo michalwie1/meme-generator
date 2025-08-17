@@ -10,7 +10,7 @@ function getMeme(){
                 selectedLineIdx: 0,
                 lines: [
                     {
-                        txt: 'Write you text here...',
+                        txt: 'Write your line here...',
                         size: 30,
                         align: 'center',
                         fontColor: 'white',
@@ -77,6 +77,7 @@ function saveMeme() {
         saveToStorage(STORAGE_SAVED_MEME, gSavedMeme)
         renderMeme(false)
         renderSavedMemes()
+        onShowMsg('Your meme was saved successfully')
     }
 }
 
@@ -162,7 +163,7 @@ function setText(txt) {
 }
 
 function addTxtLine(txt){ // TEXT - SHOULD ADD - DON'T OVERRIDE LINES !!!!
-    const newLine = _createLine()
+    const newLine = _createLine('Write your new line here...')
     newLine.txt = txt
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
@@ -336,9 +337,9 @@ function _createImg(id,keywords){
     }
 }
 
-function _createLine(){
+function _createLine(txt){
     return {
-        txt: 'Write you new line here...',
+        txt,
         size: 30,
         align: 'center',
         fontColor: 'white',

@@ -19,6 +19,9 @@ function onInit(){
     gMeme.lines[0].x = gElCanvas.width / 2
     renderMeme()
 
+    // const elEditor = document. querySelector('.editor')
+    // elEditor.classList.remove('hidden') 
+
     onNavClick('editor')
     // onNavClick('editor a')
 }

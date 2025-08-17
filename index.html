@@ -14,7 +14,7 @@
             <ul>
                 <li class="nav-gallery" onclick="onOpenGallery(this)">Gallery</li>
                 <li class="nav-editor"><a href="index.html">Editor</a></li>
-                <li class="nav-saved" onclick="onOpenSavedMemes(this)">Saved Memes</li>
+                <li class="nav-saved" onclick="onOpenSavedMemes(this)">My Memes</li>
             </ul>
         </nav>
     </header>
@@ -101,7 +101,6 @@
                     <li onclick="onSetEmoji(this)">&#128566;</li>
                     <li onclick="onSetEmoji(this)">&#128525;</li>
                     <li onclick="onSetEmoji(this)">&#128519;</li>
-                    <li onclick="onSetEmoji(this)">&#128565;</li>
                 </ul>
             </div>
 
@@ -140,22 +139,11 @@
         
         </div>
 
-            <!-- SAVE -->
-             
-                <!-- <form
-                    action=""
-                    method="POST"
-                    enctype="multipart/form-data"
-                    onsubmit="onSaveImg(event)">
-                    <input name="img" id="imgData" type="hidden"/>
-                    <button class="btn-save" type="submit" title="Save image">Save</button>
-                    </button>
-                </form> -->
 
         </section>
 
 
-        <div class="user-msg"></div>
+        <dialog class="user-msg"></dialog>
 
 
     </main>

@@ -1,0 +1,5 @@
+.user-msg{
+    z-index: 1;
+    border-radius: 10px;
+    border: 1px solid var(--clr3);
+}
