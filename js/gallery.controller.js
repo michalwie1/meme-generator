@@ -29,7 +29,8 @@ function onSelectImg(elImg) {
     const txt = 'Write your line here...'
     gMeme.selectedImgId = +elImg.id
     gMeme.lines = []
-    gMeme.lines[gMeme.selectedLineIdx] = _createLine(txt) 
+    gMeme.lines[0] = _createLine(txt) 
+    console.log(gMeme)
     const elInput = document.querySelector('.txt-box input')
     elInput.value = txt
     

@@ -100,8 +100,12 @@ function loadSavedMeme(memeId){
     const meme = gSavedMeme[memeIdx]
     const imgId = meme.imgId
     const img = new Image()
-
+    gMeme.selectedImgId = memeIdx
     saveToStorage(STORAGE_CURR_MEME, gMeme)
+    
+    console.log(gMeme.selectedImgId)
+    console.log(gSavedMeme)
+
     gMeme.selectedLineIdx = 0
     gMeme.selectedImgId = imgId
     gMeme.lines = meme.lines

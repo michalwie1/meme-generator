@@ -17,7 +17,7 @@ function setImg(imgId, hideBorder = false) {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
         gMeme.lines.forEach((line,idx) => {
-            drawText(line.txt, line.x, line.y, idx, hideBorder)
+        drawText(line.txt, line.x, line.y, idx, hideBorder)
         })
     }
 }
