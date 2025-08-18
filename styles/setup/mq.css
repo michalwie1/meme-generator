@@ -8,7 +8,6 @@
 
     main{
         display: block;
-        margin: 1em 0;
     }
 
     header {
@@ -33,11 +32,12 @@
     }
 
     .editor{
-        /* margin-top: 1em; */
         justify-self: center;
         border-radius: 30px;
-        width: 60vw;
+        max-width: 70vw;
+        width: 100%;
         margin-top: 1em;
+        padding: 1em;
     }
     
     .editor .emoji ul {
@@ -45,7 +45,8 @@
     }
     
     .canvas-board{
-        width: 60vw;
+        max-width: 70vw;
+        width: 100%;
         border-radius: 30px;
     }
 
@@ -72,14 +73,16 @@
 
     main{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 3vw;
-        margin: 3em 1em; 
+        grid-template-columns: 1fr auto;
+        gap: clamp(15px, 2vh, 20px);
+        margin: 3vw auto;
     }
     
     .editor{
-        width: 45vw;
+        max-width: 30vw;
+        width: 100%;
         margin-top: 0;
+        grid-column: 2;
     }
     
     .editor .emoji ul {
@@ -93,8 +96,10 @@
     }
     
     .canvas-board{
-        width: 45vw;
+        max-width: 60vw;
+        width: 100%;
         border-radius: 30px;
+        grid-column: 1;
     }
 
     .img-wrapper img {

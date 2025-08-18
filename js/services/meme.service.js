@@ -73,12 +73,12 @@ function saveMeme() {
         gMeme.lines.forEach((line, idx) => {
             drawText(line.txt, line.x, line.y, idx, true) 
         })
-
         const canvasData = gElCanvas.toDataURL('image/jpeg')
         const currSavedMeme = _createMeme(memeId, imgId, canvasData, gMeme.lines)
-
+        
         gSavedMeme.unshift(currSavedMeme)
-
+        
+        // console.log(gMeme)
         saveToStorage(STORAGE_SAVED_MEME, gSavedMeme)
         renderMeme(false)
         renderSavedMemes()

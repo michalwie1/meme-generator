@@ -11,8 +11,8 @@ function setImg(imgId, hideBorder = false) {
     
     img.onload = () => {
         gElCanvas.width = img.width
-        gElCanvas.height = img.height
-
+        gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
+        
         gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 

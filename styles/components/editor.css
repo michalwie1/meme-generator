@@ -3,10 +3,11 @@
     text-align: center;
     border: 2px solid var(--clr3);
     border-radius: 30px;
-    padding: 2em;
+    padding: 1em;
     margin-top: 1em;
     justify-self: center;
-    width: 90vw;
+    max-width: 90vw;
+    width: 100%;
 }
 
  .editor > * {
@@ -84,6 +85,10 @@
     padding: .5em;
     overflow:auto;
     padding-right: 0;
+}
+
+.editor .emoji ul li{
+    overflow: scroll;
 }
 
 .editor .emoji ul li:hover{
