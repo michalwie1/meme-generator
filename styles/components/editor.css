@@ -87,9 +87,9 @@
     padding-right: 0;
 }
 
-.editor .emoji ul li{
+/* .editor .emoji ul li{
     overflow: scroll;
-}
+} */
 
 .editor .emoji ul li:hover{
     opacity: .3;
